@@ -1,0 +1,259 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+}
+
+// 约束当屏幕大于 750px 的时候，html 字体大小就不变化了
+@media screen and (min-width:750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-size: .6667rem;
+    color: #666;
+}
+
+// 金刚区模块
+.warp {
+    background-color: #fff;
+    padding-bottom: 1.146667rem;
+}
+
+.header {
+    height: 2.1333rem;
+    border-bottom: 1px solid #eaeaea;
+    text-align: center;
+    line-height: 2.1333rem;
+    font-size: .96rem;
+    color: #333;
+}
+
+.nav {
+    display: flex;
+
+    // 显示不开就强制换行
+    flex-wrap: wrap;
+
+    margin: 1.2rem 0 1.6rem 0;
+
+    .itme {
+        display: flex;
+        width: 33%;
+        // 纵向显示（主轴设为Y轴）
+        flex-direction: column;
+        // 水平居中
+        align-items: center;
+
+        img {
+            width: 3.7067rem;
+            height: 3.7067rem;
+        }
+
+        // 选择前面三个 -n + 3
+        &:nth-child(-n + 3) {
+            margin-bottom: 1.6533rem;
+        }
+    }
+}
+
+.banner {
+    margin: 0 .2667rem 0 .48rem;
+}
+
+// 就业指导模块
+.content {
+    padding: 1.0667rem .64rem;
+    background-color: #fff;
+    margin-top: .2667rem;
+
+    .con-hd {
+        display: flex;
+        justify-content: space-between;
+        height: 1.0133rem;
+        line-height: 1.0133rem;
+        margin-bottom: .9067rem;
+
+
+        h4 {
+            margin: 0;
+            font-size: .7467rem;
+            color: #333;
+
+            .icon {
+                position: relative;
+                display: inline-block;
+
+                // 图片与文字垂直居中
+                vertical-align: middle;
+
+                width: 1.0133rem;
+                height: 1.0133rem;
+
+                img {
+                    position: absolute;
+                    top: -0.08rem;
+                }
+            }
+        }
+
+        .more {
+            font-size: .5867rem;
+            color: #666;
+        }
+    }
+}
+
+// 轮播图
+.get_job_focus {
+    position: relative;
+
+    .swiper-container {
+        // 根据需求把宽度改为 540px
+        width: 14.4rem;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        // 竖向显示
+        flex-direction: column;
+
+        // -webkit-box-pack: center;
+        // -ms-flex-pack: center;
+        // -webkit-justify-content: center;
+        // justify-content: center;
+        // -webkit-box-align: center;
+        // -ms-flex-align: center;
+        // -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+
+        // 未选中的大小 0.8  （相当于80%）
+        transform: scale(0.8);
+        // 让盒子透明
+        opacity: 0.4;
+
+        a {
+            width: 9.0133rem;
+            height: 10.0267rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+            width: 9.0133rem;
+            font-size: .6667rem;
+            margin-top: .64rem;
+        }
+    }
+
+    // 当前选中的 slide 大小 1 （相当于100%） 
+    // 当前案例里 中间的 那个
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+        transform: scale(1);
+        z-index: 999;
+        // 让盒子透明
+        opacity: 1;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        outline: none;
+
+        &::after {
+            font-size: 1.066667rem;
+            color: #666;
+        }
+    }
+}
+
+// 学习模块
+.study_con {
+    padding-bottom: 3.7333rem;
+}
+
+// 学习模块轮播图
+.study {
+    .mySwiper {
+        padding: .2667rem;
+        overflow: hidden;
+    }
+
+    .swiper-slide {
+        text-align: left;
+        font-size: 18px;
+        background: #fff;
+        width: 7.7333rem;
+        height: 9.0667rem;
+        border-radius: .2667rem;
+        box-shadow: 0 0 .2667rem rgba(0, 0, 0, .1);
+
+        h5 {
+            font-size: .7467rem;
+            font-weight: 400;
+            margin: .5333rem .2667rem;
+        }
+
+        p {
+            font-size: .6933rem;
+            color: #ff4400;
+            margin: 0 .2667rem 0;
+        }
+    }
+
+}
+
+// 底部
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.9333rem;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    box-sizing: border-box;
+    padding: .5333rem;
+    border-top: .0267rem solid #e2e2e2;
+
+    .item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: .5867rem;
+
+
+        img {
+            width: 1.04rem;
+            height: 1.0933rem;
+        }
+
+        p {
+            margin-top: .2667rem;
+        }
+
+        .shouye {
+            color: #6CD9D6;
+        }
+    }
+}
